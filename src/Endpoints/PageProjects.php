@@ -51,7 +51,7 @@ class PageProjects implements API
         return $this->body->result;
     }
 
-    public function createProject(string $accountID, string $domainName, array $payload): \stdClass
+    public function createProject(string $accountID, array $payload): \stdClass
     {
         $response = $this->adapter->post('accounts/' . $accountID . '/pages/projects', $payload);
         $this->body = json_decode($response->getBody());
